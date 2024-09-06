@@ -22,26 +22,30 @@ public class Edificio {
     @Id
     @Setter(AccessLevel.NONE)
     private UUID id;
-    private String città;
     private String nomeEdificio;
+    private String città;
+    private String via;
 
 
     // COSTRUTTORI
 
-    public Edificio(String città, String nomeEdificio) {
-        this.città = città;
+    public Edificio(String nomeEdificio, String città, String via) {
         this.nomeEdificio = nomeEdificio;
+        this.città = città;
+        this.via = via;
     }
 
 
     // TO STRING
 
+
     @Override
     public String toString() {
         return "Edificio{" +
                 "id=" + id +
-                ", città='" + città + '\'' +
                 ", nomeEdificio='" + nomeEdificio + '\'' +
+                ", città='" + città + '\'' +
+                ", via='" + via + '\'' +
                 '}';
     }
 }

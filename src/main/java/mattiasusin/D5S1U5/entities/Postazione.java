@@ -24,7 +24,7 @@ public class Postazione {
 
     @Enumerated
     private TipoPostazione tipoPostazione;
-    private int maxPersone;
+    private int numMaxPersone;
 
     @ManyToOne
     @JoinColumn(name = "edificio_id")
@@ -32,10 +32,10 @@ public class Postazione {
 
     // COSTRUTTORI
 
-    public Postazione(String descrizione, TipoPostazione tipoPostazione, int maxPersone, Edificio edificio) {
+    public Postazione(String descrizione, TipoPostazione tipoPostazione, int numMaxPersone, Edificio edificio) {
         this.descrizione = descrizione;
         this.tipoPostazione = tipoPostazione;
-        this.maxPersone = maxPersone;
+        this.numMaxPersone = numMaxPersone;
         this.edificio = edificio;
     }
 
@@ -47,7 +47,7 @@ public class Postazione {
                 "id=" + id +
                 ", descrizione='" + descrizione + '\'' +
                 ", tipoPostazione=" + tipoPostazione +
-                ", maxPersone=" + maxPersone +
+                ", numMaxPersone=" + numMaxPersone +
                 '}';
     }
 }

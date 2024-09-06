@@ -13,6 +13,8 @@ public class PostazioneService {
     @Autowired
     private PostazioneRepository postazioneRepository;
 
+    //QUERY
+    // 1. Salva
     public void savePostazione(Postazione newPostazione) {
         // 1. Controllo se esiste una postazione con questo id
         if (postazioneRepository.existsById(newPostazione.getId()))
@@ -26,8 +28,9 @@ public class PostazioneService {
         log.info("Nuova postazione " + newPostazione.getId() + " salvata");
     }
 
-    //FUNZIONI
-    //1. Salva
-    //2. FindByTipoPostazioneAndCittàInteresse
+    // 2. FindByTipoPostazioneAndCittàInteresse
+  /*  public List<Postazione> findByTipoDiPostazioneAndCittàInteresse(TipoPostazione tipoPostazione, String città) {
+        return PostazioneRepository.findByTipoDiPostazioneAndCittàInteresse(tipoPostazione, città);
+    }*/
 
 }

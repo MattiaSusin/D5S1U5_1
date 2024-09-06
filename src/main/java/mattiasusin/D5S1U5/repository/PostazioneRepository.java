@@ -9,5 +9,6 @@ public interface PostazioneRepository extends JpaRepository<Postazione, UUID> {
 
     // QUERY
 
+    /*static List<Postazione> findByTipoDiPostazioneAndCittàInteresse(, città);*/
 
 }
