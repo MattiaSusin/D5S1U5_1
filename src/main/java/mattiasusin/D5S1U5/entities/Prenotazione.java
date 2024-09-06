@@ -21,8 +21,10 @@ public class Prenotazione {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Setter(AccessLevel.NONE)
     private Long id;
+
     private LocalDate data;
     private boolean stato;
+
     @ManyToOne
     @JoinColumn(name = "utente_username")
     private Utente utente;
@@ -34,13 +36,13 @@ public class Prenotazione {
 
     // COSTRUTTORE
 
-    public Prenotazione(LocalDate data, Long id, boolean stato, Utente utente) {
-        this.data = data;
-        this.id = id;
-        this.stato = true;
+    public Prenotazione(Utente utente, Postazione postazione, LocalDate data) {
         this.utente = utente;
-
+        this.postazione = postazione;
+        this.data = data;
+        this.stato = true;
     }
+
 
     // TO STRING
     @Override

@@ -7,8 +7,6 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import mattiasusin.D5S1U5.enums.TipoPostazione;
 
-import java.util.UUID;
-
 @Entity
 @Table(name = "postazione")
 @NoArgsConstructor
@@ -18,8 +16,9 @@ public class Postazione {
 
     // ATTRIBUTI
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Setter(AccessLevel.NONE)
-    private UUID id;
+    private Long id;
     private String descrizione;
 
     @Enumerated
@@ -31,11 +30,10 @@ public class Postazione {
     private Edificio edificio;
 
     // COSTRUTTORI
-
-    public Postazione(String descrizione, TipoPostazione tipoPostazione, int numMaxPersone, Edificio edificio) {
+    public Postazione(String descrizione, TipoPostazione tipoPostazione, int maxPersone, Edificio edificio) {
         this.descrizione = descrizione;
         this.tipoPostazione = tipoPostazione;
-        this.numMaxPersone = numMaxPersone;
+        this.numMaxPersone = maxPersone;
         this.edificio = edificio;
     }
 

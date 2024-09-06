@@ -17,9 +17,6 @@ public class EdificioService {
         // 1. Controlla se esiste un' edificio con questo Nome
         if (edificioRepository.existsByNomeEdificio(newEdificio.getNomeEdificio()))
             throw new ValidationException("L'Edificio " + newEdificio.getNomeEdificio() + " esiste già");
-        //2. Altri metodi di validazione
-        if (newEdificio.getNomeEdificio().length() < 5)
-            throw new ValidationException("Il nome dell'edificio è troppo corto");
 
         //3. Salva l'edificio
         edificioRepository.save(newEdificio);

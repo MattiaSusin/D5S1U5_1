@@ -3,6 +3,7 @@ package mattiasusin.D5S1U5.entities;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
+import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -17,17 +18,18 @@ public class Utente {
     // ATTRIBUTI
 
     @Id
-    private String username;
-    private String nomeECognome;
+    @Setter(AccessLevel.NONE)
     private String email;
+    private String nomeECognome;
     private int numeroPrenotazioni;
+    private String username;
 
     //COSTRUTTORI
 
-    public Utente(String username, String nomeECognome, String email, int numeroPrenotazioni) {
+    public Utente(String email, String nomeECognome, int numeroPrenotazioni, String username) {
+        this.email = email;
         this.username = username;
         this.nomeECognome = nomeECognome;
-        this.email = email;
         this.numeroPrenotazioni = numeroPrenotazioni;
     }
 

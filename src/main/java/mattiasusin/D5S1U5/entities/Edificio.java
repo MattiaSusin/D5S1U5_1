@@ -1,6 +1,7 @@
 package mattiasusin.D5S1U5.entities;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 import lombok.AccessLevel;
@@ -19,19 +20,20 @@ public class Edificio {
 
     // ATTRIBUTI
 
+
     @Id
+    @GeneratedValue
     @Setter(AccessLevel.NONE)
     private UUID id;
+    private String citta;
     private String nomeEdificio;
-    private String città;
     private String via;
-
 
     // COSTRUTTORI
 
-    public Edificio(String nomeEdificio, String città, String via) {
+    public Edificio(String nomeEdificio, String citta, String via) {
         this.nomeEdificio = nomeEdificio;
-        this.città = città;
+        this.citta = citta;
         this.via = via;
     }
 
@@ -44,7 +46,7 @@ public class Edificio {
         return "Edificio{" +
                 "id=" + id +
                 ", nomeEdificio='" + nomeEdificio + '\'' +
-                ", città='" + città + '\'' +
+                ", città='" + citta + '\'' +
                 ", via='" + via + '\'' +
                 '}';
     }
